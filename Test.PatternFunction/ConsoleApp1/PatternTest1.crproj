@@ -1,0 +1,20 @@
+<project outputDir="D:\study\github_online\ConfuserEx\Test.PatternFunction\ConsoleApp1\bin\Debug\Confused" baseDir="D:\study\github_online\ConfuserEx\Test.PatternFunction\ConsoleApp1\bin\Debug" seed="123456" xmlns="http://confuser.codeplex.com">
+  <rule pattern="namespace('ClassLibraryB') and match-type-name('ClassB1')" preset="maximum" inherit="false">
+    <protection id="rename" />
+    <protection id="ctrl flow" />
+  </rule>
+  <module path="ClassLibraryA.dll">
+    <rule pattern="true" preset="maximum" />
+  </module>
+  <module path="ClassLibraryB.dll">
+    <rule pattern="name('PrivateMethod1')">
+      <protection id="rename" action="remove" />
+      <protection id="ctrl flow" action="remove" />
+    </rule>
+  </module>
+  <module path="ConsoleApp1.exe">
+    <rule pattern="true" inherit="false">
+      <protection id="ctrl flow" />
+    </rule>
+  </module>
+</project>

@@ -1,0 +1,20 @@
+<project outputDir="D:\study\github_online\ConfuserEx\Test.PatternFunction\ConsoleApp1\bin\Debug\Confused" baseDir="D:\study\github_online\ConfuserEx\Test.PatternFunction\ConsoleApp1\bin\Debug" xmlns="http://confuser.codeplex.com">
+  <rule pattern="namespace('ClassLibraryB') and match-type-name('ClassA1')" preset="maximum">
+    <protection id="rename" />
+    <protection id="ctrl flow" />
+  </rule>
+  <rule pattern="true" />
+  <module path="ClassLibraryA.dll">
+    <rule pattern="true" />
+  </module>
+  <module path="ClassLibraryB.dll">
+    <rule pattern="true">
+      <protection id="rename" action="remove" />
+    </rule>
+  </module>
+  <module path="ConsoleApp1.exe">
+    <rule pattern="match-name('Main')">
+      <protection id="ctrl flow" />
+    </rule>
+  </module>
+</project>
