@@ -1,0 +1,31 @@
+<project outputDir="D:\study\github_online\ConfuserEx\Test.PatternFunction2\ConsoleApp2\bin\Debug\Confused" baseDir="D:\study\github_online\ConfuserEx\Test.PatternFunction2\ConsoleApp2\bin\Debug" seed="1234" xmlns="http://confuser.codeplex.com">
+  <!-- 整个工程rule -->
+  <rule pattern="true" inherit="false" >
+	<protection id="rename" action="remove" />
+  </rule>
+  
+  <!-- 包装器, 暂时不支持 
+  <packer id="" action="add">
+	<argument name="" value=""/>
+	<argument name="" value=""/>
+  </packer>
+  -->
+  
+  <!-- 模块设定 -->
+  <module path="ConsoleApp2.exe">
+    <rule pattern="true" preset="minimum" inherit="false">
+      <protection id="rename" action="remove" />
+    </rule>
+    <rule pattern="true" inherit="false">
+      <protection id="ctrl flow" />
+    </rule>
+  </module>
+  
+  <!-- 依赖项目目录 设定多次-->
+  <probePath></probePath>
+  
+  <!-- 插件（外部目录）设定多次 -->
+  <plugin></plugin>
+
+  
+</project>

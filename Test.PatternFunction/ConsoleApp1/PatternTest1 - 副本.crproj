@@ -1,0 +1,34 @@
+<!-- 工程配置文件 Seed可以为空-->
+<project 
+  outputDir="D:\study\github_online\ConfuserEx\Test.PatternFunction\ConsoleApp1\bin\Debug\Confused" 
+  baseDir="D:\study\github_online\ConfuserEx\Test.PatternFunction\ConsoleApp1\bin\Debug"
+  seed="123456"
+  xmlns="http://confuser.codeplex.com">
+  
+  <!--一个项目有一个公共的混淆规则配置，其他子Module都继承之-->
+  <!-- 每个自Module可以设置自己的混淆规则、并可以通过设置action = remove用来去除继承来的规则-->
+  <!-- preset表示预设的规则，如果不设置，则默认为 None，添加的为元数据保护-->
+  <rule pattern="namespace('ClassLibraryB') and match-type-name('ClassB1')" preset="none" inherit="false">
+    <protection id="rename" />
+    <protection id="ctrl flow" />
+  </rule>
+  <module path="ClassLibraryA.dll">
+    <rule pattern="true" preset="maximum" />
+  </module>
+  <module path="ClassLibraryB.dll">
+    <rule pattern="name('PrivateMethod1')">
+      <protection id="rename" action="remove" />
+      <protection id="ctrl flow" action="remove" />
+    </rule>
+  </module>
+  <module path="ConsoleApp1.exe">
+    <rule pattern="true" inherit="false">
+      <protection id="ctrl flow" />
+    </rule>
+  </module>
+  <!-- 引用工程目录 -->
+  <probePath>D:\work\逆向工程\工程混淆\IOServer20180928\Refrence</probePath>
+
+  <!--自定义意义插件目录-->
+  <plugin>D:\study\github_online\ConfuserEx\Confuser.Plugin\bin\Debug\Confuser.Plugin.dll</plugin>
+</project>
